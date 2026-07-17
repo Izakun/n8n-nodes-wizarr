@@ -16,7 +16,7 @@ export class Wizarr implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Wizarr',
 		name: 'wizarr',
-		icon: { light: 'file:wizarr.svg', dark: 'file:wizarr.svg' },
+		icon: { light: 'file:wizarr.svg', dark: 'file:wizarr.dark.svg' },
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"]}}',
