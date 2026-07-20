@@ -1,4 +1,9 @@
-import { IAuthenticateGeneric, ICredentialType, INodeProperties } from 'n8n-workflow';
+import {
+	IAuthenticateGeneric,
+	ICredentialTestRequest,
+	ICredentialType,
+	INodeProperties,
+} from 'n8n-workflow';
 
 export class WizarrApi implements ICredentialType {
 	name = 'wizarrApi';
@@ -28,6 +33,14 @@ export class WizarrApi implements ICredentialType {
 			description: 'Wizarr API key (Settings → API Keys)',
 		},
 	];
+
+	test: ICredentialTestRequest = {
+		request: {
+			method: 'GET',
+			baseURL: '={{$credentials.baseUrl}}',
+			url: '/api/status',
+		},
+	};
 
 	authenticate: IAuthenticateGeneric = {
 		type: 'generic',
